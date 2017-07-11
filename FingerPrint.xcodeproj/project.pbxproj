@@ -225,6 +225,7 @@
 				TargetAttributes = {
 					C67E60101F035653000558EA = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = ZE26F429EL;
 						ProvisioningStyle = Automatic;
 					};
 					C67E60291F035653000558EA = {
@@ -444,7 +445,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = ZE26F429EL;
 				INFOPLIST_FILE = FingerPrint/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -457,7 +458,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = ZE26F429EL;
 				INFOPLIST_FILE = FingerPrint/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

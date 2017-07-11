@@ -21,18 +21,23 @@
         block(LYTReplyVersionNotSupport, nil);
         return;
     }
-    //
+    
+    //创建实例对象context
     LAContext *context = [[LAContext alloc] init];
-    context.localizedFallbackTitle = fallBackTitle == nil ? @"输入密码" : fallBackTitle;
+    
+    //指纹弹框“输入密码”按钮的标题，如果不设置或设置为nil，则显示默认的“输入密码”；如果设置为@""，则弹框不再显示这个按钮
+    context.localizedFallbackTitle = fallBackTitle;
+    
+    //可以设置指纹弹框“取消”按钮的标题（iOS10.0以上可用），如果不设置或设置为nil或设置为@""，都显示默认的“取消”
     if ([[UIDevice currentDevice].systemVersion floatValue] >= 10) {
-        context.localizedCancelTitle = cancelTitle == nil ? @"取消" : cancelTitle;
+        context.localizedCancelTitle = cancelTitle;
     }
     
     NSError *Error = nil;
-    NSString *reason = localizedReason == nil ? @"通过Home键验证已有手机指纹" : localizedReason;
     
     if ([context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&Error]) {
         //该设备支持TouchID
+        NSString *reason = localizedReason == nil ? @"通过Home键验证已有手机指纹" : localizedReason;
         [context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:reason reply:^(BOOL success, NSError * _Nullable error) {
             if (success) {
                 [[NSOperationQueue mainQueue] addOperationWithBlock:^{

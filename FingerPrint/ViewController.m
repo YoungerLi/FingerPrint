@@ -4,11 +4,15 @@
 //
 //  Created by Kosien on 17/2/28.
 //  Copyright © 2017年 kosienDGL. All rights reserved.
-//
+//  代码地址：https://github.com/YoungerLi/FingerPrint
 
 #import "ViewController.h"
 #import "RootViewController.h"
 #import "LYTouchID.h"
+
+//屏幕宽高
+#define SCREEN_WIDTH  [UIScreen mainScreen].bounds.size.width
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 
 @interface ViewController ()
 
@@ -21,9 +25,8 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"首页";
     
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
-    button.backgroundColor = [UIColor redColor];
-    [button setTitle:@"FingerPrint" forState:UIControlStateNormal];
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake((SCREEN_WIDTH-100)/2, (SCREEN_HEIGHT-100)/2, 100, 100)];
+    [button setBackgroundImage:[UIImage imageNamed:@"touchID"] forState:UIControlStateNormal];
     [button addTarget:self action:@selector(evaluateAuthenticate) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
 }
@@ -31,7 +34,7 @@
 #pragma mark - 指纹验证
 - (void)evaluateAuthenticate
 {
-    [LYTouchID ly_touchIDWithFallBackTitle:@"验证密码哈" cancelTitle:@"取消了" localizedReason:nil reply:^(LYTReply reply, NSError *error) {
+    [LYTouchID ly_touchIDWithFallBackTitle:@"验证密码哈" cancelTitle:@"取消了" localizedReason:@"请验证已有手机指纹" reply:^(LYTReply reply, NSError *error) {
         NSLog(@"reply == %zd", reply);
         switch (reply) {
             case LYTReplyAuthenticationSuccess:{

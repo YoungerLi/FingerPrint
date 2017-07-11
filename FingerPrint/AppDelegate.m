@@ -4,7 +4,7 @@
 //
 //  Created by Kosien on 17/2/28.
 //  Copyright © 2017年 kosienDGL. All rights reserved.
-//
+//  代码地址：https://github.com/YoungerLi/FingerPrint
 
 #import "AppDelegate.h"
 #import "ViewController.h"

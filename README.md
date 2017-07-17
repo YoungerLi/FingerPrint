@@ -29,3 +29,5 @@ iOS指纹解锁，a demo with TouchID.
 }];
 ```
 ### ps:以上的情况，需要哪些就写哪些就行！
+
+具体的API详细介绍请查看：http://www.jianshu.com/p/2559779a85c5

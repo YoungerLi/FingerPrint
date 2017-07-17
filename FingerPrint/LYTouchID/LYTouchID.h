@@ -5,6 +5,7 @@
 //  Created by liyang on 17/2/28.
 //  Copyright © 2017年 kosienDGL. All rights reserved.
 //
+//  此类封装了指纹解锁TouchID
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
@@ -50,7 +51,6 @@ typedef NS_ENUM(NSUInteger, LYTReply)
 };
 
 typedef void(^ReplyBlock)(LYTReply reply, NSError *error);
-
 
 
 @interface LYTouchID : NSObject
